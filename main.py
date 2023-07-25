@@ -32,24 +32,33 @@ def checkWin(xState, zState):
     if (sum(i) == 3):
         return 1
 
-if __name__ == "__main__":
-    xState =[0, 0, 0, 0, 0, 0, 0, 0, 0]
-    zState =[0, 0, 0, 0, 0, 0, 0, 0, 0]
-    turn =1 # 1 for X and 0 for O
-    print("Welcome to TIC TAC TOE")
-    while(True):
-        printBoard(xState, zState)
-        if (turn ==1):
-            print("X's chance")
-            value= int(input("Please enter a value: "))
-            xState[value] = 1
-        else:
-            print("O's chance")
-            value= int(input("Please enter a value: "))
-            zState[value] =1
-        cWin = checkWin(xState, zState)
-        if(cWin!= -1):
-            break
-        turn =1- turn
-        
-
+def Tic_Toc_Toe_game():
+    if __name__ == "__main__":
+        xState =[0, 0, 0, 0, 0, 0, 0, 0, 0]
+        zState =[0, 0, 0, 0, 0, 0, 0, 0, 0]
+        turn =1 # 1 for X and 0 for O
+        print("Welcome to TIC TAC TOE")
+        while(True):
+            printBoard(xState, zState)
+            if (turn ==1):
+                print("X's chance")
+                value= int(input("Please enter a value: "))
+                xState[value] = 1
+            else:
+                print("O's chance")
+                value= int(input("Please enter a value: "))
+                zState[value] =1
+            cWin = checkWin(xState, zState)
+            if(cWin!= -1):
+                break
+            turn =1- turn
+            
+            
+Tic_Toc_Toe_game()
+again = input("Do you want to play the game again( Yes or No): ")
+if (again=='Yes'):
+    print("Welcome again")
+    print("Enjoy the game")
+    Tic_Toc_Toe_game()
+else:
+    print("Thank you for playing the game")
